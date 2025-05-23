@@ -8,6 +8,11 @@ class Calculator
     end
 
     numbers = numbers.gsub("\n", ',')
-    numbers.split(',').map(&:to_i).sum
+    nums = numbers.split(',').map(&:to_i)
+
+    negatives = nums.select { |n| n < 0 }
+    raise "negative numbers not allowed: #{negatives.join(',')}" unless negatives.empty?
+
+    nums.sum
   end
 end
