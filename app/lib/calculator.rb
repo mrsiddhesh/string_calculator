@@ -13,6 +13,6 @@ class Calculator
     negatives = nums.select { |n| n < 0 }
     raise "negative numbers not allowed: #{negatives.join(',')}" unless negatives.empty?
 
-    nums.sum
+    nums.select { |n| n <= 1000 }.sum
   end
 end
