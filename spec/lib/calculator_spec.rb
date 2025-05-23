@@ -17,5 +17,9 @@ RSpec.describe Calculator do
     it 'returns sum of any amount of comma-separated numbers' do
       expect(Calculator.add("1,2,3,4")).to eq(10)
     end
+
+    it 'handles newlines between numbers' do
+      expect(Calculator.add("1\n2,3")).to eq(6)
+    end
   end
 end
